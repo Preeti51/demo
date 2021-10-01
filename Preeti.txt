@@ -1,0 +1,52 @@
+Date - 30 sep 2021 (Capstone)
+
+INSERT INTO `Mg_Sub`.`Mg`
+(`mg_id`,
+`mg_name`,
+`mg_price`)
+VALUES
+(4,"Smart Photography",449),
+(5,"Fashion up India",555),
+(6,"Smart Photography",449),
+(7,"Tinkle",299),
+(8,"Femina",339),
+(9,"business Standard",449),
+(10,"The Week",444);
+
+======================================================
+
+CREATE TABLE `Mg_Sub`.`Subscription` (
+  `mg_id` INT NOT NULL,
+  `Sub_id` INT NOT NULL,
+  `startDate` DATETIME NOT NULL,
+  `endDate` DATETIME NOT NULL,
+  PRIMARY KEY (`Sub_id`),
+  CONSTRAINT `mg11_id`
+    FOREIGN KEY (`mg_id`)
+    REFERENCES `Mg_Sub`.`Mg` (`mg_id`));
+
+INSERT INTO `Mg_Sub`.`Subscription`
+( `mg_id`,
+  `Sub_id`,
+`startdate`,
+`enddate`)
+VALUES(1,1,"2021/1/1","2021/3/1"); 
+
+INSERT INTO `Mg_Sub`.`Subscription`
+( `mg_id`,
+  `Sub_id`,
+`startdate`,
+`enddate`)
+VALUES(2,2,"2021/01/01","2021/03/01"),
+(3,3,"2021/2/1","2021/07/31"),
+(4,4,"2021/3/1","2021/8/31"),
+(5,5,"2021/5/1","2021/8/31"),
+(6,6,"2021/6/1","2021/12/31"),
+(7,7,"2021/1/1","2021/3/1"),
+(8,8,"2021/3/1","2021/2/28"),
+(9,9,"2021/6/1","2021/6/30"),
+(10,10,"2021/4/1","2021/4/30"); 
+
+select * from Subscription;
+
+=====================================================
